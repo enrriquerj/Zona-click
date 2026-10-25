@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2563eb">
+<title>ZonaClick — Prototipo funcional</title>
+<style>
+:root{--blue:#2563eb;--blue2:#1d4ed8;--green:#16a34a;--ink:#172033;--muted:#64748b;--line:#e2e8f0;--soft:#f8fafc;--red:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:850px;margin:auto;padding:18px}.top{display:flex;align-items:center;gap:12px;margin-bottom:20px}.logo{width:54px;height:54px;border-radius:17px;background:var(--blue);color:white;display:grid;place-items:center;font-size:30px;font-weight:800}.brand{font-size:26px;font-weight:850;letter-spacing:-.8px}.brand span{color:var(--blue)}.tag{font-size:13px;color:var(--muted)}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.nav button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;color:#334155;font-weight:650}.nav button.active{background:#eff6ff;color:var(--blue2);border-color:#bfdbfe}.panel{border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:16px;box-shadow:0 3px 14px #0f172a08}.hidden{display:none!important}h1{font-size:25px;line-height:1.2;margin:0 0 8px}h2{font-size:19px;margin:0 0 6px}p{margin:6px 0;color:var(--muted)}.small{font-size:13px}.row{display:flex;gap:10px;align-items:center}.row>*{flex:1;min-width:0}.field{display:block;margin:12px 0;font-weight:650;font-size:14px}.field input,.field select,.field textarea{display:block;width:100%;margin-top:6px;border:1px solid #cbd5e1;border-radius:12px;padding:12px;background:white;color:var(--ink)}.field textarea{min-height:90px;resize:vertical}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:750;min-height:46px}.primary{background:var(--blue);color:#fff}.primary:hover{background:var(--blue2)}.secondary{background:#eff6ff;color:var(--blue2);border:1px solid #bfdbfe}.outline{background:#fff;border:1px solid #cbd5e1;color:#334155}.danger{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}.success{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}.full{width:100%}.notice{background:#f8fafc;border:1px solid var(--line);padding:12px;border-radius:12px;color:#475569;font-size:13px}.status{display:inline-block;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:750;background:#fef3c7;color:#92400e}.status.approved{background:#dcfce7;color:#166534}.status.rejected,.status.inactive{background:#fee2e2;color:#991b1b}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.cat{border:1px solid var(--line);background:#fff;border-radius:15px;padding:12px 5px;min-height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}.cat[aria-pressed=true]{border:2px solid var(--blue);background:#eff6ff}.ico{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:23px}.cat span:last-child{font-size:12px;font-weight:700;text-align:center}.maprow{display:flex;align-items:center;gap:12px;background:var(--soft);padding:12px;border-radius:14px;margin-top:14px}.maprow .grow{flex:1}.maprow select{max-width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:10px;background:#fff}.listitem{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px}.listitem h3{font-size:16px;margin:0 0 4px}.listitem p{font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.actions .btn{min-height:38px;padding:8px 11px;font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.stat{background:var(--soft);border-radius:13px;padding:12px}.stat b{display:block;font-size:22px}.stat span{font-size:12px;color:var(--muted)}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:14px;margin:12px 0}.checkline input{margin-top:5px}.footer{text-align:center;color:#94a3b8;font-size:12px;padding:14px 0 30px}.toast{padding:12px;border-radius:12px;margin:10px 0;font-size:14px}.toast.ok{background:#f0fdf4;color:#166534}.toast.err{background:#fef2f2;color:#991b1b}.empty{padding:18px;text-align:center;color:var(--muted);border:1px dashed #cbd5e1;border-radius:14px;margin-top:12px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.wrap{padding:26px}.panel{padding:22px}}@media(max-width:430px){.row{flex-direction:column;align-items:stretch}.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">↗</div>
+    <div><div class="brand">Zona<span>Click</span></div><div class="tag">Los negocios cerca de ti</div></div>
+  </header>
+  <nav class="nav" aria-label="Secciones">
+    <button class="active" data-view="cliente">Ver ofertas</button>
+    <button data-view="registro">Registrar negocio</button>
+    <button data-view="admin">Administración</button>
+  </nav>
+
+  <main>
+    <section id="view-cliente">
+      <div class="panel">
+        <h1>¡Descubre ofertas cerca de ti!</h1>
+        <p>Elige tu zona y las categorías que te interesan.</p>
+        <div class="maprow"><span style="font-size:27px">📍</span><div class="grow"><b>Tu zona</b><div class="small" id="locationStatus">Puedes elegirla manualmente o intentar usar el GPS.</div></div><button id="gpsBtn" class="btn secondary">Usar GPS</button></div>
+        <label class="field">Selecciona tu zona
+          <select id="zone"><option value="">Elige una zona</option><option>Santo Domingo Este</option><option>Santo Domingo Norte</option><option>Santo Domingo Oeste</option><option>Distrito Nacional</option><option>San Cristóbal</option><option>Santiago</option><option>Otra zona</option></select>
+        </label>
+      </div>
+      <div class="panel">
+        <h2>¿Qué promociones te interesan?</h2><p>Selecciona una o varias categorías.</p>
+        <div class="grid" id="categories"></div>
+        <button id="continueBtn" class="btn primary full" style="margin-top:15px">Continuar</button>
+        <div id="customerMessage" aria-live="polite"></div>
+      </div>
+      <div class="panel hidden" id="consentPanel">
+        <h2>¿Quieres recibir ofertas por WhatsApp?</h2>
+        <p>Solo debes aceptar si deseas recibir promociones. Puedes cambiar de opinión cuando quieras.</p>
+        <label class="checkline"><input type="checkbox" id="consentCheck"><span>Acepto recibir promociones por WhatsApp y entiendo que podré cancelar mi consentimiento.</span></label>
+        <button id="savePrefs" class="btn primary full">Guardar mis preferencias</button>
+        <button id="declinePrefs" class="btn outline full" style="margin-top:8px">No, gracias</button>
+        <div id="consentMessage" aria-live="polite"></div>
+      </div>
+      <div class="panel" id="offersPanel">
+        <h2>Promociones de ejemplo</h2><p>Contenido ilustrativo para probar la pantalla. No son ofertas reales.</p>
+        <div id="offersList" class="empty">Selecciona una zona y tus categorías para ver una demostración.</div>
+      </div>
+    </section>
+
+    <section id="view-registro" class="hidden">
+      <div class="panel">
+        <h1>Registra tu negocio</h1>
+        <p>Las solicitudes quedan pendientes hasta que el administrador las revise.</p>
+        <form id="businessForm">
+          <label class="field">Nombre del negocio *<input name="name" required maxlength="100" placeholder="Ej. Cafetería La Esquina"></label>
+          <label class="field">Categoría *
+            <select name="category" required><option value="">Selecciona una categoría</option><option>Tiendas</option><option>Supermercados</option><option>Farmacias</option><option>Barberías</option><option>Salones</option><option>Colmados</option><option>Pizzerías</option><option>Heladerías</option><option>Restaurantes</option><option>Electrodomésticos</option><option>Servicios</option><option>Otros</option></select>
+          </label>
+          <label class="field">Dirección o sector *<input name="address" required maxlength="180" placeholder="Ej. Alma Rosa, Santo Domingo Este"></label>
+          <label class="field">Zona de promoción *
+            <select name="zone" required><option value="">Selecciona la zona</option><option>Santo Domingo Este</option><option>Santo Domingo Norte</option><option>Santo Domingo Oeste</option><option>Distrito Nacional</option><option>San Cristóbal</option><option>Santiago</option><option>Otra zona</option></select>
+          </label>
+          <label class="field">Correo electrónico *<input name="email" required type="email" maxlength="150" placeholder="negocio@correo.com"></label>
+          <label class="field">Teléfono de contacto (opcional)<input name="phone" type="tel" maxlength="40" placeholder="Teléfono del negocio"></label>
+          <button class="btn primary full" type="submit">Enviar solicitud de prueba</button>
+        </form>
+        <div id="registerMessage" aria-live="polite"></div>
+        <div class="notice" style="margin-top:14px">Este prototipo guarda la información en este navegador y dispositivo. No crea una cuenta en un servidor ni envía correos.</div>
+      </div>
+    </section>
+
+    <section id="view-admin" class="hidden">
+      <div class="panel">
+        <h1>Panel de administración</h1>
+        <p>Para esta demostración, el panel está abierto sin contraseña. No lo publiques así en internet.</p>
+        <div class="stats"><div class="stat"><b id="pendingCount">0</b><span>Pendientes</span></div><div class="stat"><b id="approvedCount">0</b><span>Aprobados</span></div><div class="stat"><b id="totalCount">0</b><span>Total solicitudes</span></div></div>
+        <div class="row"><button id="exportBtn" class="btn secondary">Exportar datos</button><button id="clearBtn" class="btn danger">Borrar datos locales</button></div>
+        <div id="adminMessage" aria-live="polite"></div>
+      </div>
+      <div class="panel"><h2>Solicitudes de negocios</h2><p>Aprueba, rechaza o desactiva negocios de prueba.</p><div id="businessList"></div></div>
+      <div class="panel"><h2>Historial</h2><div id="historyList"></div></div>
+    </section>
+  </main>
+  <div class="footer">ZonaClick · Prototipo local de prueba · No envía mensajes ni procesa pagos</div>
+</div>
+<script>
+(function(){
+const CATS=[
+ ['Tiendas','🛍️','#e0e7ff'],['Supermercados','🛒','#dcfce7'],['Farmacias','✚','#dbeafe'],
+ ['Barberías','✂️','#fef3c7'],['Salones','💇','#f3e8ff'],['Colmados','🏪','#ffedd5'],
+ ['Pizzerías','🍕','#fee2e2'],['Heladerías','🍦','#fce7f3'],['Restaurantes','🍽️','#ffedd5'],
+ ['Electrodomésticos','📺','#cffafe'],['Servicios','🧰','#ccfbf1'],['Otros','✨','#f1f5f9']
+];
+const $=id=>document.getElementById(id);
+const STORE='zonaclick_demo_v1';
+let chosen=new Set();
+function load(){try{return JSON.parse(localStorage.getItem(STORE))||{businesses:[],history:[],prefs:null}}catch(e){return {businesses:[],history:[],prefs:null}}}
+function save(data){localStorage.setItem(STORE,JSON.stringify(data))}
+function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function msg(id,text,type='ok'){const el=$(id);el.innerHTML='<div class="toast '+type+'">'+safe(text)+'</div>'}
+function renderCats(){ $('categories').innerHTML=CATS.map(([name,icon,color])=>`<button type="button" class="cat" data-cat="${safe(name)}" aria-pressed="false"><span class="ico" style="background:${color}">${icon}</span><span>${safe(name)}</span></button>`).join('');$('categories').querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.cat;chosen.has(n)?chosen.delete(n):chosen.add(n);b.setAttribute('aria-pressed',String(chosen.has(n)));$('customerMessage').innerHTML=''}))}
+function switchView(name){document.querySelectorAll('[id^="view-"]').forEach(s=>s.classList.toggle('hidden',s.id!=='view-'+name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===name));if(name==='admin')renderAdmin()}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+$('gpsBtn').addEventListener('click',()=>{const st=$('locationStatus');if(!navigator.geolocation){st.textContent='Este navegador no ofrece GPS. Elige la zona manualmente.';return}st.textContent='Solicitando permiso de ubicación…';navigator.geolocation.getCurrentPosition(pos=>{st.textContent='Ubicación recibida. El prototipo no envía ni guarda tus coordenadas; selecciona tu zona manualmente para continuar.';st.dataset.lat=pos.coords.latitude;st.dataset.lon=pos.coords.longitude;},err=>{st.textContent=err.code===1?'No se autorizó el GPS. Puedes elegir la zona manualmente.':'No se pudo obtener el GPS. Prueba con HTTPS o elige la zona manualmente.'},{enableHighAccuracy:false,timeout:10000,maximumAge:60000})});
+$('continueBtn').addEventListener('click',()=>{if(!$('zone').value){msg('customerMessage','Selecciona tu zona para continuar.','err');return}if(!chosen.size){msg('customerMessage','Selecciona al menos una categoría.','err');return}$('consentPanel').classList.remove('hidden');$('consentPanel').scrollIntoView({behavior:'smooth',block:'start'});$('customerMessage').innerHTML=''});
+function savePrefs(consent){const prefs={zone:$('zone').value,categories:[...chosen],whatsappConsent:consent,updatedAt:new Date().toISOString()};const data=load();data.prefs=prefs;save(data);$('consentPanel').classList.add('hidden');if(consent){msg('customerMessage','Preferencias guardadas en este dispositivo. La conexión real con WhatsApp todavía no está activada.','ok')}else{msg('customerMessage','No se activaron promociones por WhatsApp. Tus categorías se guardaron localmente.','ok')}renderOffers()}
+$('savePrefs').addEventListener('click',()=>{if(!$('consentCheck').checked){msg('consentMessage','Marca la casilla si realmente aceptas recibir promociones.','err');return}savePrefs(true)});
+$('declinePrefs').addEventListener('click',()=>savePrefs(false));
+function renderOffers(){const prefs=load().prefs;if(!prefs){$('offersList').className='empty';$('offersList').textContent='Selecciona una zona y tus categorías para ver una demostración.';return}const examples=[{name:'Oferta de ejemplo: cafetería local',cat:'Restaurantes',text:'Ejemplo de promoción. Añade aquí una oferta real cuando el sistema esté conectado.'},{name:'Oferta de ejemplo: supermercado',cat:'Supermercados',text:'Ejemplo ilustrativo, sin precio ni descuento real.'},{name:'Oferta de ejemplo: farmacia',cat:'Farmacias',text:'Promoción de muestra; no representa un negocio real.'}].filter(o=>prefs.categories.includes(o.cat)||prefs.categories.includes('Otros'));if(!examples.length){$('offersList').className='empty';$('offersList').textContent='Aún no hay promociones reales. Las ofertas se conectarán cuando exista un servidor y los negocios aprobados publiquen campañas.';return}$('offersList').className='';$('offersList').innerHTML=examples.map(o=>`<div class="listitem"><h3>${safe(o.name)}</h3><p>${safe(o.text)}</p><span class="status">Ejemplo · ${safe(prefs.zone)}</span></div>`).join('')}
+$('businessForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const b={id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),name:f.get('name').trim(),category:f.get('category'),address:f.get('address').trim(),zone:f.get('zone'),email:f.get('email').trim(),phone:f.get('phone').trim(),status:'pending',createdAt:new Date().toISOString(),decisionAt:null,reason:''};const d=load();if(d.businesses.some(x=>x.email.toLowerCase()===b.email.toLowerCase())){msg('registerMessage','Ya existe una solicitud con ese correo en este dispositivo.','err');return}d.businesses.unshift(b);d.history.unshift({at:b.createdAt,action:'Solicitud recibida',name:b.name,detail:'Pendiente de revisión'});save(d);e.target.reset();msg('registerMessage','Solicitud guardada en este dispositivo. Entra en Administración para aprobarla o rechazarla.','ok')});
+function date(v){try{return new Date(v).toLocaleString('es-DO',{dateStyle:'medium',timeStyle:'short'})}catch(e){return v}}
+function renderAdmin(){const d=load();$('pendingCount').textContent=d.businesses.filter(b=>b.status==='pending').length;$('approvedCount').textContent=d.businesses.filter(b=>b.status==='approved').length;$('totalCount').textContent=d.businesses.length;const list=$('businessList');if(!d.businesses.length){list.innerHTML='<div class="empty">Todavía no hay solicitudes. Puedes crear una desde “Registrar negocio”.</div>'}else{list.innerHTML=d.businesses.map(b=>`<article class="listitem"><div class="row"><h3>${safe(b.name)}</h3><span class="status ${b.status==='approved'?'approved':b.status==='rejected'?'rejected':b.status==='inactive'?'inactive':''}">${b.status==='pending'?'Pendiente':b.status==='approved'?'Aprobado':b.status==='rejected'?'Rechazado':'Inactivo'}</span></div><p>${safe(b.category)} · ${safe(b.zone)} · ${safe(b.address)}</p><p>${safe(b.email)}${b.phone?' · '+safe(b.phone):''}</p><p>Solicitud: ${safe(date(b.createdAt))}${b.decisionAt?' · Decisión: '+safe(date(b.decisionAt)):''}</p>${b.reason?'<p>Motivo: '+safe(b.reason)+'</p>':''}<div class="actions">${b.status==='pending'?`<button class="btn success" data-action="approve" data-id="${safe(b.id)}">Aprobar</button><button class="btn danger" data-action="reject" data-id="${safe(b.id)}">Rechazar</button>`:''}${b.status==='approved'?`<button class="btn danger" data-action="deactivate" data-id="${safe(b.id)}">Desactivar</button>`:''}${b.status==='inactive'||b.status==='rejected'?`<button class="btn secondary" data-action="pending" data-id="${safe(b.id)}">Volver a pendiente</button>`:''}</div></article>`).join('')}
+list.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('click',()=>{const d=load(),b=d.businesses.find(x=>x.id===btn.dataset.id);if(!b)return;let action=btn.dataset.action,detail='';if(action==='reject'){detail=prompt('Motivo del rechazo (opcional):','');if(detail===null)return;b.reason=detail.trim()}if(action==='approve'){b.status='approved';detail='Negocio aprobado'}if(action==='reject'){b.status='rejected';detail='Solicitud rechazada'}if(action==='deactivate'){if(!confirm('¿Desactivar este negocio de prueba?'))return;b.status='inactive';detail='Negocio desactivado'}if(action==='pending'){b.status='pending';detail='Solicitud devuelta a pendiente'}b.decisionAt=new Date().toISOString();d.history.unshift({at:b.decisionAt,action:detail,name:b.name,detail:b.reason||''});save(d);renderAdmin()}));
+$('historyList').innerHTML=d.history.length?d.history.map(h=>`<div class="listitem"><b>${safe(h.action)}</b><p>${safe(h.name)} · ${safe(date(h.at))}</p>${h.detail?'<p>'+safe(h.detail)+'</p>':''}</div>`).join(''):'<div class="empty">El historial aparecerá aquí.</div>'}
+$('exportBtn').addEventListener('click',()=>{const d=load(),blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='zonaclick-datos-prueba.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);msg('adminMessage','Se preparó la exportación de los datos locales.','ok')});
+$('clearBtn').addEventListener('click',()=>{if(!confirm('Esto borrará solicitudes, historial y preferencias guardadas en este navegador. ¿Continuar?'))return;localStorage.removeItem(STORE);chosen.clear();renderCats();renderAdmin();$('adminMessage').innerHTML='';msg('adminMessage','Datos locales borrados.','ok')});
+renderCats();renderOffers();
+})();
+</script>
+</body>
+</html>
